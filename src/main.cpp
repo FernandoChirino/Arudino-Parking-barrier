@@ -1,18 +1,37 @@
 #include <Arduino.h>
+#include <HCSR04.h>
+
+const int trigPin = 11;
+const int echoPin = 10;
+const int greenPin = 53;
+const int redPin = 51;
+
+UltraSonicDistanceSensor distanceSensor(trigPin, echoPin);
 
 // put function declarations here:
-int myFunction(int, int);
 
 void setup() {
-  // put your setup code here, to run once:
-  int result = myFunction(2, 3);
+  Serial.begin(9600);
+  Serial.println("Ultrasonic Sensor Test");
 }
 
 void loop() {
-  // put your main code here, to run repeatedly:
+  double distance = distanceSensor.measureDistanceCm();
+
+  Serial.print("Distance: ");
+  Serial.print(distance);
+  Serial.println(" cm");
+
+  digitalWrite(redPin, HIGH);
+  digitalWrite(greenPin, LOW);
+
+  if (distance <= 5.0 && distance > 0.0){
+    digitalWrite(redPin, LOW);
+    digitalWrite(greenPin, HIGH);
+    delay(1500);
+  }
+
+  delay(500);
 }
 
 // put function definitions here:
-int myFunction(int x, int y) {
-  return x + y;
-}
