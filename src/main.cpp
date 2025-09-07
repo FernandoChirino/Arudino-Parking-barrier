@@ -1,18 +1,22 @@
 #include <Arduino.h>
 #include <HCSR04.h>
+#include <Servo.h>
 
 const int trigPin = 11;
 const int echoPin = 10;
 const int greenPin = 53;
 const int redPin = 51;
+const int servoPin = 13;
 
 UltraSonicDistanceSensor distanceSensor(trigPin, echoPin);
+Servo myServo; 
 
-// put function declarations here:
 
 void setup() {
+  myServo.attach(servoPin);
+  myServo.write(0);
   Serial.begin(9600);
-  Serial.println("Ultrasonic Sensor Test");
+
 }
 
 void loop() {
@@ -25,13 +29,13 @@ void loop() {
   digitalWrite(redPin, HIGH);
   digitalWrite(greenPin, LOW);
 
-  if (distance <= 5.0 && distance > 0.0){
+  if (distance <= 6.0 && distance > 0.0){
     digitalWrite(redPin, LOW);
     digitalWrite(greenPin, HIGH);
-    delay(1500);
+
+    myServo.write(90);
+    delay(2000);
   }
 
-  delay(500);
+  myServo.write(0);
 }
-
-// put function definitions here:
