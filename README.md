@@ -24,6 +24,9 @@ A simple recreation of a parking barrier using arduino and a servo motor
 **Servo** by Michael Margolis 
 
 ## Wiring Diagrams
+### Protoboard view
+<img width="2667" height="1956" alt="parking-barrier-protoboardView" src="https://github.com/user-attachments/assets/b9246dfa-552d-4e24-aa4e-b8c8e2dbd47e" />
 
-
+### Schematic
+<img width="1548" height="1509" alt="parking-barrier-schematic" src="https://github.com/user-attachments/assets/de21f493-d7f6-4d84-a63a-57b08ed00199" />
 
