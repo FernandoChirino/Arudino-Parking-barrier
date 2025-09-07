@@ -12,7 +12,7 @@ A simple recreation of a parking barrier using arduino and a servo motor
 |Arudino Mega 2056 | 1|
 |5mm Red LED       | 1|
 |5mm Green LED     | 1|
-|220 ohms resistance       | 1|
+|220 ohms resistance       | 2|
 |Servo Motor SG90  | 1|
 |830 points breadboard     | 1|
 |HC-SR04 Ultrasonic Sensor | 1|
